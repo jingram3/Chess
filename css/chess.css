@@ -1,0 +1,74 @@
+﻿#content-area {
+    display: flex;
+    justify-content: center;
+}
+
+#board {
+    display: flex;
+    flex-wrap: wrap;
+    width: 640px;
+    height: 640px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px 1px 1px 1px;
+}
+
+.square {
+    width: 80px;
+    height: 80px;
+    /*border-style: solid;
+    border-color: black;
+    border-width: 0 1px 1px 0;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rank:nth-child(odd) .square:nth-child(odd), .rank:nth-child(even) .square:nth-child(even) {
+    background-color: whitesmoke;
+}
+.rank:nth-child(odd) .square:nth-child(even), .rank:nth-child(even) .square:nth-child(odd) {
+    background-color: darkslategrey;
+}
+
+.piece {
+    background-image: url('../images/ChessPiecesArray.png');
+    background-repeat: no-repeat;
+    height: 53px;
+    width: 60px;
+}
+
+.white {
+    background-position-y: -60px;
+}
+
+.pawn {
+    background-position-x: -303px;
+}
+.rook {
+    background-position-x: -120px;
+}
+.knight {
+    background-position-x: -180px;
+}
+.bishop {
+    background-position-x: -240px;
+}
+.queen {
+    background-position-x: 0px;
+}
+.king {
+    background-position-x: -60px;
+}
+
+#board .rank .square.selected {
+    background-color: green;
+}
+
+.legal-move {
+    /*box-shadow: inset 0px 0px 0px 3px #48DA48;*/
+    background-image: url(../images/circle.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 16px 16px;
+}
