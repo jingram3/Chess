@@ -342,15 +342,16 @@ function minimax(game, depth, alpha, beta, isMaximisingPlayer) {
     }
 }
 
+// board is access from top-left to bottom-right
 function evaluateBoard(board) {
     var score = 0;
-
     for (var r = 0; r < 8; r++) {
         for (var f = 0; f < 8; f++) {
             var square = board[r][f];
-			if (square !== null) {
-				var pieceValue = pieceValues[square.type][square.color];
-				score += pieceValue.value + pieceValue.placement[r][f];
+            if (square !== null) {
+                
+                var pieceValue = pieceValues[square.type][square.color];
+                score += pieceValue.value + pieceValue.placement[r][f] * (square.color === "w" ? 1 : -1);
 			}
         }
     }
